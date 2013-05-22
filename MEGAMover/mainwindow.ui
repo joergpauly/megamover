@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Joerg Pauly</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>748</width>
+    <height>593</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MEGAMover</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>MM.png</normaloff>MM.png</iconset>
+  </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haupt-Rahmen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>64</width>
+    <height>64</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Triangular</enum>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="whatsThis">
+       <string>In diesem Bereich werden Unter-Fenster angezeigt.</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QMdiArea::TabbedView</enum>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="tabsMovable">
+       <bool>true</bool>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>748</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Auftragsdaten">
+    <property name="title">
+     <string>&amp;Auftragswesen</string>
+    </property>
+    <widget class="QMenu" name="menu_Listen">
+     <property name="title">
+      <string>&amp;Listen</string>
+     </property>
+     <addaction name="actionAuftr_ge_nach_Auswahl"/>
+     <addaction name="action_Wochen_bersicht"/>
+    </widget>
+    <addaction name="actionNeu_Be_arbeiten"/>
+    <addaction name="action_Suchen"/>
+    <addaction name="action_Terminplanung"/>
+    <addaction name="menu_Listen"/>
+    <addaction name="separator"/>
+    <addaction name="actionProgramm_schli_e_en"/>
+   </widget>
+   <widget class="QMenu" name="menuAb_rechnungsdaten">
+    <property name="title">
+     <string>Ab&amp;rechnungswesen</string>
+    </property>
+    <widget class="QMenu" name="menu_Offene_Posten">
+     <property name="title">
+      <string>&amp;Offene Posten</string>
+     </property>
+     <addaction name="action_Zahlungseingang"/>
+     <addaction name="action_Mahnwesen"/>
+    </widget>
+    <addaction name="actionLeistungsnachweise_buchen"/>
+    <addaction name="actionAb_rechnung_erstellen_bearbeiten"/>
+    <addaction name="menu_Offene_Posten"/>
+   </widget>
+   <widget class="QMenu" name="menu_Stammdaten">
+    <property name="title">
+     <string>&amp;Stammdaten</string>
+    </property>
+    <addaction name="action_Kunden"/>
+    <addaction name="action_Personal"/>
+    <addaction name="action_Fahrzeuge_Ger_te"/>
+    <addaction name="action_Leistungen"/>
+    <addaction name="action_Material_Konten"/>
+    <addaction name="separator"/>
+    <addaction name="action_Termin_Arten"/>
+    <addaction name="action_Adress_Arten"/>
+    <addaction name="action_Steuers_tze"/>
+    <addaction name="action_Zentrale_Adressen_Verwaltung"/>
+    <addaction name="separator"/>
+    <addaction name="actionMan_danten"/>
+   </widget>
+   <widget class="QMenu" name="menu_Einstellungen">
+    <property name="title">
+     <string>&amp;Einstellungen</string>
+    </property>
+    <addaction name="action_Datenbank"/>
+    <addaction name="actionDru_cker"/>
+    <addaction name="actionDruck_Formulare"/>
+   </widget>
+   <widget class="QMenu" name="menu_Hilfe">
+    <property name="title">
+     <string>&amp;Hilfe</string>
+    </property>
+    <addaction name="actionHilfe"/>
+    <addaction name="action_ber"/>
+    <addaction name="separator"/>
+    <addaction name="action_ber_Qt"/>
+   </widget>
+   <widget class="QMenu" name="menu_Mandanten_Auswahl">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>&amp;Mandanten-Auswahl</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <addaction name="action_aus_w_hlen"/>
+   </widget>
+   <addaction name="menu_Auftragsdaten"/>
+   <addaction name="menuAb_rechnungsdaten"/>
+   <addaction name="menu_Stammdaten"/>
+   <addaction name="menu_Einstellungen"/>
+   <addaction name="menu_Hilfe"/>
+   <addaction name="menu_Mandanten_Auswahl"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="status">
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>120</width>
+     <height>38</height>
+    </size>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Schnellstarter</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>181</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QToolBox" name="toolBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="page">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>152</width>
+           <height>414</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>152</width>
+           <height>414</height>
+          </size>
+         </property>
+         <attribute name="label">
+          <string>Auftragswesen</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="cmdAuftrag">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>144</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Aufträge
+bearbeiten</string>
+            </property>
+            <property name="icon">
+             <iconset resource="MEGAMover.qrc">
+              <normaloff>:/icons/applications-office.png</normaloff>:/icons/applications-office.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdSearch">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Suchen</string>
+            </property>
+            <property name="icon">
+             <iconset resource="MEGAMover.qrc">
+              <normaloff>:/icons/edit-find.png</normaloff>:/icons/edit-find.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdTermin">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Terminwesen</string>
+            </property>
+            <property name="icon">
+             <iconset resource="MEGAMover.qrc">
+              <normaloff>:/icons/planner.png</normaloff>:/icons/planner.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdClose">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Programm
+beenden</string>
+            </property>
+            <property name="icon">
+             <iconset resource="MEGAMover.qrc">
+              <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>169</width>
+           <height>431</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Abrechnungswesen</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>169</width>
+           <height>431</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Stammdaten</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="cmdClients">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="whatsThis">
+             <string>Bearbeiten des Kunden-Stammes.</string>
+            </property>
+            <property name="text">
+             <string>Kundenstamm</string>
+            </property>
+            <property name="icon">
+             <iconset resource="MEGAMover.qrc">
+              <normaloff>:/icons/resource-group.png</normaloff>:/icons/resource-group.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdPersonal">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Personalstamm</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdDevices">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Fahrzeuge /
+Geräte</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cmdRows">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Leistungen</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <action name="actionNeu_Be_arbeiten">
+   <property name="icon">
+    <iconset resource="MEGAMover.qrc">
+     <normaloff>:/icons/applications-office.png</normaloff>:/icons/applications-office.png</iconset>
+   </property>
+   <property name="text">
+    <string>Neu / Be&amp;arbeiten</string>
+   </property>
+  </action>
+  <action name="action_Suchen">
+   <property name="icon">
+    <iconset resource="MEGAMover.qrc">
+     <normaloff>:/icons/edit-find.png</normaloff>:/icons/edit-find.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Suchen</string>
+   </property>
+  </action>
+  <action name="action_Terminplanung">
+   <property name="icon">
+    <iconset resource="MEGAMover.qrc">
+     <normaloff>:/icons/planner.png</normaloff>:/icons/planner.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Terminplanung</string>
+   </property>
+  </action>
+  <action name="actionAuftr_ge_nach_Auswahl">
+   <property name="text">
+    <string>Aufträge nach &amp;Auswahl</string>
+   </property>
+  </action>
+  <action name="action_Wochen_bersicht">
+   <property name="text">
+    <string>&amp;Wochen-Übersicht</string>
+   </property>
+  </action>
+  <action name="actionProgramm_schli_e_en">
+   <property name="icon">
+    <iconset resource="MEGAMover.qrc">
+     <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Programm schli&amp;eßen</string>
+   </property>
+  </action>
+  <action name="actionLeistungsnachweise_buchen">
+   <property name="text">
+    <string>Leistungsnachweise &amp;buchen</string>
+   </property>
+  </action>
+  <action name="actionAb_rechnung_erstellen_bearbeiten">
+   <property name="text">
+    <string>Ab&amp;rechnung erstellen / bearbeiten</string>
+   </property>
+  </action>
+  <action name="action_Zahlungseingang">
+   <property name="text">
+    <string>&amp;Zahlungseingang</string>
+   </property>
+  </action>
+  <action name="action_Mahnwesen">
+   <property name="text">
+    <string>&amp;Mahnwesen</string>
+   </property>
+  </action>
+  <action name="action_Personal">
+   <property name="text">
+    <string>&amp;Personal</string>
+   </property>
+  </action>
+  <action name="action_Fahrzeuge_Ger_te">
+   <property name="text">
+    <string>&amp;Fahrzeuge / Geräte</string>
+   </property>
+  </action>
+  <action name="action_Kunden">
+   <property name="text">
+    <string>&amp;Kunden</string>
+   </property>
+  </action>
+  <action name="action_Leistungen">
+   <property name="text">
+    <string>&amp;Leistungen</string>
+   </property>
+  </action>
+  <action name="action_Termin_Arten">
+   <property name="text">
+    <string>&amp;Termin-Arten</string>
+   </property>
+  </action>
+  <action name="action_Adress_Arten">
+   <property name="text">
+    <string>&amp;Adress-Arten</string>
+   </property>
+  </action>
+  <action name="action_Material_Konten">
+   <property name="text">
+    <string>&amp;Material-Konten</string>
+   </property>
+  </action>
+  <action name="action_Steuers_tze">
+   <property name="text">
+    <string>&amp;Steuersätze</string>
+   </property>
+  </action>
+  <action name="action_Zentrale_Adressen_Verwaltung">
+   <property name="text">
+    <string>&amp;Zentrale Adressen-Verwaltung</string>
+   </property>
+  </action>
+  <action name="action_Datenbank">
+   <property name="icon">
+    <iconset resource="MEGAMover.qrc">
+     <normaloff>:/icons/preferences-other.png</normaloff>:/icons/preferences-other.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Datenbank</string>
+   </property>
+  </action>
+  <action name="actionDru_cker">
+   <property name="text">
+    <string>Dru&amp;cker</string>
+   </property>
+  </action>
+  <action name="actionDruck_Formulare">
+   <property name="text">
+    <string>Druck-&amp;Formulare</string>
+   </property>
+  </action>
+  <action name="actionMan_danten">
+   <property name="text">
+    <string>Man&amp;danten</string>
+   </property>
+  </action>
+  <action name="actionHilfe">
+   <property name="text">
+    <string>Hilfe...</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="action_ber">
+   <property name="text">
+    <string>Über...</string>
+   </property>
+  </action>
+  <action name="action_ber_Qt">
+   <property name="text">
+    <string>Über Qt...</string>
+   </property>
+  </action>
+  <action name="action_aus_w_hlen">
+   <property name="text">
+    <string>...aus&amp;wählen</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MEGAMover.qrc"/>
+ </resources>
+ <connections/>
+</ui>
