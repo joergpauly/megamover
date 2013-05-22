@@ -111,7 +111,7 @@ void CClientAccountPad::updateUI()
     }
 
     QTableWidget *ltbl = ui->tbvwBankAccounts; // Macht den Code etwas lesbarer
-    // zun‰chst das TableWidget lˆschen
+    // zun√§chst das TableWidget l√∂schen
     ltbl->clear();
     // Header anlegen
     QStringList lheader;
@@ -121,12 +121,12 @@ void CClientAccountPad::updateUI()
     lheader.append("IBAN");
     lheader.append("S.W.I.F.T.");
     ui->tbvwBankAccounts->setHorizontalHeaderLabels(lheader);
-    //Wenn wir ein g¸ltiges Resultset f¸r die Konten haben...
+    //Wenn wir ein g√ºltiges Resultset f√ºr die Konten haben...
     if(m_qry->first())
     {
-        ltbl->setRowCount(m_qry->size()+1); //...Anzahl Konten + 1 (f¸r Neuanlage) Zeilen anlegen.
+        ltbl->setRowCount(m_qry->size()+1); //...Anzahl Konten + 1 (f√ºr Neuanlage) Zeilen anlegen.
         int row = 0;
-        do          // Iteration der Konto-S‰tze
+        do          // Iteration der Konto-S√§tze
         {            
             QSqlRecord lrec = m_qry->record();
             QTableWidgetItem *litem0 = new QTableWidgetItem(m_qry->value(lrec.indexOf("bankname")).toString());
@@ -153,9 +153,9 @@ void CClientAccountPad::updateUI()
             row++;
         }while(m_qry->next());
     }
-    else        // es gibt noch keine Kontodaten f¸r den Mandant/Kunden...
+    else        // es gibt noch keine Kontodaten f√ºr den Mandant/Kunden...
     {
-        ui->tbvwBankAccounts->setRowCount(1); // ...also Zeile f¸r Header und Neuanlage erzeugen.
+        ui->tbvwBankAccounts->setRowCount(1); // ...also Zeile f√ºr Header und Neuanlage erzeugen.
     }
 }
 
@@ -269,15 +269,15 @@ void CClientAccountPad::deleteAccount()
     }
 
     QMessageBox *dlg = new QMessageBox();
-    dlg->setWindowTitle("Kontoverbindung lˆschen");
-    dlg->setText("Mˆchten Sie diese Kontoverbindung lˆschen?");
+    dlg->setWindowTitle("Kontoverbindung l√∂schen");
+    dlg->setText("M√∂chten Sie diese Kontoverbindung l√∂schen?");
     QString litext = ui->tbvwBankAccounts->item(ui->tbvwBankAccounts->currentRow(), 0)->text();
     litext.append("\nKto.-Nr.: ");
     litext.append(ui->tbvwBankAccounts->item(ui->tbvwBankAccounts->currentRow(), 2)->text());
     dlg->setInformativeText(litext);
     dlg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    dlg->setButtonText(QMessageBox::Yes, "Ja, bitte lˆschen!");
-    dlg->setButtonText(QMessageBox::No, "Nein, nicht lˆschen!");
+    dlg->setButtonText(QMessageBox::Yes, "Ja, bitte l√∂schen!");
+    dlg->setButtonText(QMessageBox::No, "Nein, nicht l√∂schen!");
     dlg->setDefaultButton(QMessageBox::No);
 
     if(dlg->exec() == QMessageBox::Yes)
@@ -304,7 +304,7 @@ void CClientAccountPad::makeAccStandard()
     // ID sichern
     int lid = ui->tbvwBankAccounts->item(ui->tbvwBankAccounts->currentRow(), 0)->data(QTableWidgetItem::UserType).toInt();
     QSqlQuery lq;
-    // zun‰chst alle auf "Nicht-Standard" setzen
+    // zun√§chst alle auf "Nicht-Standard" setzen
     QString qstr = "UPDATE tblBankAccs SET standard = 0 WHERE ";
 
     if (m_client)
@@ -319,7 +319,7 @@ void CClientAccountPad::makeAccStandard()
     lq.prepare(qstr);
     lq.addBindValue(m_id);
     lq.exec();
-    // Jetzt ausgew‰hlten flaggen
+    // Jetzt ausgew√§hlten flaggen
     lq.prepare("UPDATE tblBankAccs SET standard = 1 WHERE ID = ?;");
     lq.addBindValue(lid);
     lq.exec();
@@ -340,7 +340,7 @@ void CClientAccountPad::setupMenu()
     m_menu = new QMenu(this);
     QList<QAction*> lActions;
 
-    m_acDelete = new QAction("Kontoverbindung lˆschen...", this);
+    m_acDelete = new QAction("Kontoverbindung l√∂schen...", this);
     lActions.append(m_acDelete);
     m_acStandard = new QAction("Als Standard setzen", this);
     lActions.append(m_acStandard);

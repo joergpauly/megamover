@@ -25,8 +25,8 @@ CClientSearch::CClientSearch(QWidget *parent) :
     model->setHeaderData(1, Qt::Horizontal, "Matchcode");
     model->setHeaderData(2, Qt::Horizontal, "Auftraggeber Name");
     model->setHeaderData(3, Qt::Horizontal, "Auftraggeber Ort");
-    model->setHeaderData(4, Qt::Horizontal, "Rg.-Empfänger Name");
-    model->setHeaderData(5, Qt::Horizontal, "Rg.-Empfänger Ort");
+    model->setHeaderData(4, Qt::Horizontal, "Rg.-EmpfÃ¤nger Name");
+    model->setHeaderData(5, Qt::Horizontal, "Rg.-EmpfÃ¤nger Ort");
     ui->tblClients->setModel(model);
 
     ui->tblClients->setColumnWidth(0, 60);

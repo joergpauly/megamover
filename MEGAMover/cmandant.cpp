@@ -115,8 +115,8 @@ void CMandant::on_cmdDelete_clicked()
     if(m_qryMap->size() == 1)
     {
         QMessageBox *dlg = new QMessageBox();
-        dlg->setWindowTitle("Löschen nicht möglich!");
-        dlg->setText("Der letzte Mandant kann nicht gelöscht werden!");
+        dlg->setWindowTitle("LÃ¶schen nicht mÃ¶glich!");
+        dlg->setText("Der letzte Mandant kann nicht gelÃ¶scht werden!");
         dlg->setInformativeText("Um die Konsistenz der Datenbank aufrecht zu erhalten,\nwurde die Anforderung abgewiesen!");
         dlg->setIcon(QMessageBox::Critical);
         dlg->exec();
@@ -126,10 +126,10 @@ void CMandant::on_cmdDelete_clicked()
 
     QMessageBox *dlg = new QMessageBox();
     dlg->setLocale(QLocale(QLocale::German, QLocale::Germany));
-    dlg->setWindowTitle("Löschen eines Mandanten");
-    dlg->setText("Wollen Sie diesen Mandanten wirklich löschen?");
-    dlg->setInformativeText("Die Aktion kann nicht rückgängig gemacht werden.\nSiehe \"Details\"");
-    dlg->setDetailedText("Alle ggf. noch dem Mandanten zugehörigen Aufträge\nwerden dem ersten Mandanten zugeordnet.\n\nDie betroffenen Auftrags-Nummern werden zum Ausdruck vorbereitet.");
+    dlg->setWindowTitle("LÃ¶schen eines Mandanten");
+    dlg->setText("Wollen Sie diesen Mandanten wirklich lÃ¶schen?");
+    dlg->setInformativeText("Die Aktion kann nicht rÃ¼ckgÃ¤ngig gemacht werden.\nSiehe \"Details\"");
+    dlg->setDetailedText("Alle ggf. noch dem Mandanten zugehÃ¶rigen AuftrÃ¤ge\nwerden dem ersten Mandanten zugeordnet.\n\nDie betroffenen Auftrags-Nummern werden zum Ausdruck vorbereitet.");
     dlg->setIcon(QMessageBox::Warning);
     dlg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     dlg->setDefaultButton(QMessageBox::No);
@@ -148,7 +148,7 @@ void CMandant::on_cmdDelete_clicked()
     else
     {
         QMessageBox *dlg = new QMessageBox();
-        dlg->setWindowTitle("Löschen verworfen");
+        dlg->setWindowTitle("LÃ¶schen verworfen");
         dlg->setText("FEIGLING!!!");
         QFont font;
         font.setBold(true);

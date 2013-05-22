@@ -146,18 +146,18 @@ void CClient::on_cmdSrchClient_clicked()
 void CClient::on_cmdDeleteClient_clicked()
 {
     QMessageBox *dlg = new QMessageBox();
-    dlg->setWindowTitle("Kunden löschen");
-    dlg->setText("Möchten Sie diesen Kundenstammsatz wirklich löschen?");
-    dlg->setInformativeText("(Siehe \"Details\" für mehr Informationen)");
-    dlg->setDetailedText("Es wird nur der Kunden-Kopfsatz inkl.\n der Kontodaten gelöscht,\n\bnicht\b jedoch die Adressen.\n\nDiese müssen ggf. in der \"Zentralen Adressverwaltung\"\ngelöscht werden.");
+    dlg->setWindowTitle("Kunden lÃ¶schen");
+    dlg->setText("MÃ¶chten Sie diesen Kundenstammsatz wirklich lÃ¶schen?");
+    dlg->setInformativeText("(Siehe \"Details\" fÃ¼r mehr Informationen)");
+    dlg->setDetailedText("Es wird nur der Kunden-Kopfsatz inkl.\n der Kontodaten gelÃ¶scht,\n\bnicht\b jedoch die Adressen.\n\nDiese mÃ¼ssen ggf. in der \"Zentralen Adressverwaltung\"\ngelÃ¶scht werden.");
     dlg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    dlg->setButtonText(QMessageBox::Yes, "Ja, löschen!");
+    dlg->setButtonText(QMessageBox::Yes, "Ja, lÃ¶schen!");
     dlg->setButtonText(QMessageBox::No, "Nein");
     dlg->setIcon(QMessageBox::Question);
     if(dlg->exec() == QMessageBox::Yes)
     {
         QSqlQuery lqry;
-        //Zunächst Bank-Daten löschen:
+        //ZunÃ¤chst Bank-Daten lÃ¶schen:
         lqry.prepare("DELETE FROM tblBankAccs WHERE clientid = ?;");
         lqry.addBindValue(m_id);
         lqry.exec();

@@ -90,7 +90,7 @@ bool AdressPad::seek(int pField, QString *pValue)
 
 void AdressPad::updateUI()
 {
-    if(!m_query->isValid()) //Gültiger Datensatz? Sonst Felder disabeln und raus hier...
+    if(!m_query->isValid()) //GÃ¼ltiger Datensatz? Sonst Felder disabeln und raus hier...
     {
         setFieldsEditable(false);
         return;
