@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CMandant</class>
+ <widget class="QDialog" name="CMandant">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>311</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MEGAMover.qrc">
+    <normaloff>:/icons/MM.png</normaloff>:/icons/MM.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horiMnr">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Mandanten-Nr.:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtMnr">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="AdressPad" name="Adresse" native="true"/>
+   </item>
+   <item>
+    <widget class="CClientAccountPad" name="padAcc" native="true"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="cmdNew">
+       <property name="toolTip">
+        <string>Die angezeigte Adresse als neuen Mandanten hinzufügen.</string>
+       </property>
+       <property name="statusTip">
+        <string>Die angezeigte Adresse als neuen Mandanten hinzufügen.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Die angezeigte Adresse als neuen Mandanten hinzufügen.</string>
+       </property>
+       <property name="text">
+        <string>Hi&amp;nzufügen</string>
+       </property>
+       <property name="shortcut">
+        <string>Alt+N</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdPrev">
+       <property name="toolTip">
+        <string>Vorheriger Datensatz.</string>
+       </property>
+       <property name="statusTip">
+        <string>Vorheriger Datensatz.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Vorheriger Datensatz.</string>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+       <property name="shortcut">
+        <string>Alt+Left</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdNext">
+       <property name="toolTip">
+        <string>Nächster Datensatz.</string>
+       </property>
+       <property name="statusTip">
+        <string>Nächster Datensatz.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Nächster Datensatz.</string>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+       <property name="shortcut">
+        <string>Alt+Right</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdDelete">
+       <property name="toolTip">
+        <string>Die aktuelle Adresse löschen.</string>
+       </property>
+       <property name="statusTip">
+        <string>Die aktuelle Adresse löschen.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Die aktuelle Adresse löschen.</string>
+       </property>
+       <property name="text">
+        <string>Löschen</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdClose">
+       <property name="toolTip">
+        <string>Diesen Dialog schließen.</string>
+       </property>
+       <property name="statusTip">
+        <string>Diesen Dialog schließen.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Diesen Dialog schließen.</string>
+       </property>
+       <property name="text">
+        <string>S&amp;chließen</string>
+       </property>
+       <property name="icon">
+        <iconset theme="close">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="shortcut">
+        <string>Alt+C</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AdressPad</class>
+   <extends>QWidget</extends>
+   <header>adresspad.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CClientAccountPad</class>
+   <extends>QWidget</extends>
+   <header>cclientaccountpad.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="MEGAMover.qrc"/>
+ </resources>
+ <connections/>
+</ui>
