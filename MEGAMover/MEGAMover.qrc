@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>mmico.png</file>
+        <file>MM.png</file>
+        <file>ok.png</file>
+        <file>remove.png</file>
+        <file>planner.png</file>
+        <file>preferences-other.png</file>
+        <file>edit-find.png</file>
+        <file>exit.png</file>
+        <file>filenew.png</file>
+        <file>fileopen.png</file>
+        <file>filesave.png</file>
+        <file>applications-office.png</file>
+        <file>face-raspberry.png</file>
+        <file>clients.png</file>
+        <file>resource-group.png</file>
+    </qresource>
+</RCC>
