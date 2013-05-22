@@ -1,4 +1,4 @@
-/**************************************************************************
+﻿/**************************************************************************
 ** This file is part of the MEGAMover-Project
 ** (C) 2013 Joerg Pauly
 ** Author:    joerg
@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->toolBox->setItemText(0, "Auftragswesen");
     ui->toolBox->setItemText(1, "Abrechnungswesen");
     ui->dockWidget->setFixedWidth(200);
+    ui->toolBox->setCurrentIndex(0);
     core = new CCore(this);
     QString lTitle;
     lTitle = APP;
@@ -51,7 +52,7 @@ void MainWindow::closeEvent(QCloseEvent *e)
 {
     QMessageBox *l_msg = new QMessageBox(this);
     l_msg->setWindowTitle("Programm beenden");
-    l_msg->setText("M�chten Sie das Programm beenden?");
+    l_msg->setText("Möchten Sie das Programm beenden?");
     l_msg->setInformativeText("Die Datenbank wird aktualisiert und die Verbindung wird geschlossen.");
     l_msg->setIcon(QMessageBox::Question);
     l_msg->setStandardButtons(QMessageBox::Yes | QMessageBox::No);

@@ -53,7 +53,7 @@ private:
     QSqlQueryModel *model;
     int m_adrID;
 
-//Öffentliche Member
+//Ã–ffentliche Member
 public:
     int getAdrID();
 

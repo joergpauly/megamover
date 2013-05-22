@@ -54,8 +54,8 @@ void CDatabaseManager::setupDB()
     {
         QMessageBox *dlg = new QMessageBox();
         dlg->setWindowTitle("Datenbank-Fehler");
-        dlg->setText("Datenbank kann nicht geöffnet werden!");
-        dlg->setInformativeText("Die Datenbank gab einen Fehler zurück.");
+        dlg->setText("Datenbank kann nicht geÃ¶ffnet werden!");
+        dlg->setInformativeText("Die Datenbank gab einen Fehler zurÃ¼ck.");
         dlg->setDetailedText(dbcn.lastError().text());
         dlg->setIcon(QMessageBox::Critical);
         dlg->setStandardButtons(QMessageBox::Ok);
