@@ -1,4 +1,4 @@
-/**************************************************************************
+﻿/**************************************************************************
 ** This file is part of the MEGAMover-Project
 ** (C) 2013 Joerg Pauly
 ** Author:    joerg
@@ -21,6 +21,7 @@ COrders::COrders(QWidget *parent) :
 {    
     ui->setupUi(this);    
     m_parent = parent;
+    m_qry = new QSqlQuery();
 }
 
 COrders::~COrders()
