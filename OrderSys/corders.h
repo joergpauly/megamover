@@ -1,4 +1,4 @@
-/**************************************************************************
+﻿/**************************************************************************
 ** This file is part of the MEGAMover-Project
 ** (C) 2013 Joerg Pauly
 ** Author:    joerg
@@ -49,6 +49,7 @@ private slots:
 
 private:
     Ui::COrders *ui;
+    QSqlQuery *m_qry;
     QWidget *m_parent;
     QWidget *m_subwindow;
     int m_aufID;
@@ -56,6 +57,7 @@ private:
 //Private Members
 private:
     void updateUI();
+    void setupQuery();
 
 };
 

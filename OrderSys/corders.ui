@@ -126,16 +126,16 @@
                 <item>
                  <layout class="QHBoxLayout" name="pboxAG">
                   <item>
-                   <widget class="QPushButton" name="cmdSrchAG">
+                   <widget class="QPushButton" name="cmdNewAG">
                     <property name="text">
-                     <string>Suchen</string>
+                     <string>Neu anlegen</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="cmdNewAG">
+                   <widget class="QPushButton" name="cmdSrchAG">
                     <property name="text">
-                     <string>Neu anlegen</string>
+                     <string>Suchen</string>
                     </property>
                    </widget>
                   </item>
@@ -162,16 +162,16 @@
                 <item>
                  <layout class="QHBoxLayout" name="pboxRE">
                   <item>
-                   <widget class="QPushButton" name="cmdSrchRE">
+                   <widget class="QPushButton" name="cmdNewRE">
                     <property name="text">
-                     <string>Suchen</string>
+                     <string>Neu anlegen</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="cmdNewRE">
+                   <widget class="QPushButton" name="cmdSrchRE">
                     <property name="text">
-                     <string>Neu anlegen</string>
+                     <string>Suchen</string>
                     </property>
                    </widget>
                   </item>
