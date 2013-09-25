@@ -12,5 +12,5 @@
 
 #ifndef QTVERSION_H
 #define QTVERSION_H
-#define QT4
+#define QT5
 #endif // QTVERSION_H

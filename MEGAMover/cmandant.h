@@ -20,7 +20,7 @@
 #include <QtGui/QDialog>
 #endif
 
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 #include "ccore.h"
 
 

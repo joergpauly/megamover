@@ -16,7 +16,7 @@
 //System-Header
 #include <QObject>
 #include <QString>
-#include <QStatusBar>
+#include <QtWidgets/QStatusBar>
 
 //Projekt-Header
 #include "cdatabasemanager.h"

@@ -21,7 +21,7 @@
 #include <QtGui/QWidget>
 #endif
 
-#include <QMdiSubWindow>
+#include <QtWidgets/QMdiSubWindow>
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QString>

@@ -21,7 +21,7 @@
 #endif
 
 #include <QSqlQuery>
-#include <QListWidgetItem>
+#include <QtWidgets/QListWidgetItem>
 
 namespace Ui {
 class CMdtWahl;

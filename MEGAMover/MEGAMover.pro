@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core widgets gui sql
 
 
 TARGET = MEGAMover

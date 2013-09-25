@@ -21,12 +21,12 @@
 #include <QtGui/QMainWindow>
 #endif
 
-#include <QWidget>
-#include <QMessageBox>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QMessageBox>
 #include <QCloseEvent>
 #include <QString>
-#include <QLabel>
-#include <QStatusBar>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QStatusBar>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QList>
