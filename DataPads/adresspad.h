@@ -25,7 +25,7 @@
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 
 

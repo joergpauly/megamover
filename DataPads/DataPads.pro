@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += sql
+QT       += core widgets gui sql
 
 TARGET = DataPads
 TEMPLATE = lib

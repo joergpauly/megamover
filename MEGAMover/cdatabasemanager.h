@@ -19,8 +19,8 @@
 #include <QSqlRecord>
 #include <QSqlError>
 #include <QString>
-#include <QMessageBox>
-#include <QStatusBar>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QStatusBar>
 #include "csettings.h"
 
 
