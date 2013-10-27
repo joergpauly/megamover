@@ -100,6 +100,5 @@ OTHER_FILES += \
     circle.png \
     blue.png \
     background.png \
-    applications-office.png \
-    Users.png \ 
-    Users.png 
+    applications-office.png
+
