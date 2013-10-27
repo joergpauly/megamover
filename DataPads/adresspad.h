@@ -65,7 +65,9 @@ public:
 
 private slots:
 
-    void on_txtLDKZ_lostFocus();
+    void on_txtLDKZ_textChanged(const QString &arg1);
+    void on_txtOrt_editingFinished();
+    void dirty();
 };
 
 #endif // ADRESSPAD_H
