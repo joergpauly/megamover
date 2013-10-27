@@ -73,3 +73,33 @@ else:unix: LIBS += -L$$OUT_PWD/../StData/ -lStData
 
 INCLUDEPATH += $$PWD/../StData
 DEPENDPATH += $$PWD/../StData
+
+OTHER_FILES += \
+    undo.png \
+    triangle.png \
+    tongue.png \
+    resource-group.png \
+    remove.png \
+    redo.png \
+    red.png \
+    rectangle.png \
+    preferences-other.png \
+    planner.png \
+    ok.png \
+    mmico.png \
+    MM.png \
+    green.png \
+    filesave.png \
+    fileopen.png \
+    filenew.png \
+    fileclose.png \
+    face-raspberry.png \
+    exit.png \
+    edit-find.png \
+    clients.png \
+    circle.png \
+    blue.png \
+    background.png \
+    applications-office.png \
+    Users.png \ 
+    Users.png 
