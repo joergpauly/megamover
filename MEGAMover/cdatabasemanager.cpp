@@ -19,7 +19,7 @@ CDatabaseManager::CDatabaseManager(QObject *parent) :
     QObject(parent)
 {    
     m_parent = parent;
-    dbcn = QSqlDatabase::addDatabase("QMYSQL","defaultConnection");
+    dbcn = QSqlDatabase::addDatabase("QMYSQL");
     setupDB();
 }
 
