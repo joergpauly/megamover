@@ -75,3 +75,23 @@ void COrders::updateUI()
     ui->txtUpdated->setText(qry->value(lrec.indexOf("lastupdated")).toDate().toString("dd.MM.yyyy"));
     ui->cmbStatus->setCurrentIndex(lrec.value(lrec.indexOf("status")).toInt());
 }
+
+void COrders::on_cmdNewAG_clicked()
+{
+    //TODO: AdressMap anlegen oder updaten mit Pos=1, adressID=neue Adress-ID, orderID=m_id
+}
+
+void COrders::on_cmdSrchAG_clicked()
+{
+    //TODO: AdressMap anlegen oder updaten mit Pos=1, adressID=gefundene Adress-ID, orderID=m_id
+}
+
+void COrders::on_cmdNewRE_clicked()
+{
+    //TODO: AdressMap anlegen oder updaten mit Pos=2, adressID=neue Adress-ID, orderID=m_id
+}
+
+void COrders::on_cmdSrchRE_clicked()
+{
+    //TODO: AdressMap anlegen oder updaten mit Pos=2, adressID=gefundene Adress-ID, orderID=m_id
+}

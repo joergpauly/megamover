@@ -47,6 +47,14 @@ private slots:
 
     void on_cmdNewAuf_clicked();
 
+    void on_cmdNewAG_clicked();
+
+    void on_cmdSrchAG_clicked();
+
+    void on_cmdNewRE_clicked();
+
+    void on_cmdSrchRE_clicked();
+
 private:
     Ui::COrders *ui;
     QSqlQuery *m_qry;
@@ -62,3 +70,5 @@ private:
 };
 
 #endif // CORDERS_H
+
+
