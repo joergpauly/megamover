@@ -69,10 +69,11 @@ private slots:
 
     void on_cmdSaveClient_clicked();
 
-    void on_txtMatch_lostFocus();
+    void on_padAccount_dataChanged();
+
+    void on_txtMatch_textChanged(const QString &arg1);
 
 //Private Properties
-    void on_padAccount_dataChanged();
 
 private:
     Ui::CClient *ui;

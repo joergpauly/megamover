@@ -215,13 +215,13 @@ void CClient::on_cmdSaveClient_clicked()
     updateDB();
 }
 
-void CClient::on_txtMatch_lostFocus()
-{
-    ui->txtMatch->setText(ui->txtMatch->text().toUpper());
-}
-
 void CClient::on_padAccount_dataChanged()
 {
     m_ustID = ui->padAccount->getUstID();
     m_myaccref = ui->padAccount->getMyAccRef();
+}
+
+void CClient::on_txtMatch_textChanged(const QString &arg1)
+{
+    ui->txtMatch->setText(arg1.toUpper());
 }

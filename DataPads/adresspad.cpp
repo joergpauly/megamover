@@ -12,12 +12,27 @@
 
 #include "adresspad.h"
 #include "ui_adresspad.h"
+#include <QtWidgets/QLineEdit>
 
 AdressPad::AdressPad(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AdressPad)
 {
-    ui->setupUi(this);    
+    ui->setupUi(this);
+    connect(ui->txtAnrede,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtEmail,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtFax,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtHnr,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtLDKZ,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtMobil,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtName1,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtName2,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtOrt,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtPLZ,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtStrasse,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtTelefon,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtTitel,SIGNAL(editingFinished()),this, SLOT(dirty()));
+    connect(ui->txtVorname,SIGNAL(editingFinished()),this, SLOT(dirty()));
     m_query = new QSqlQuery();
 }
 
@@ -203,7 +218,21 @@ void AdressPad::setFieldsEditable(bool pEnable)
     ui->txtEmail->setEnabled(pEnable);
 }
 
-void AdressPad::on_txtLDKZ_lostFocus()
+
+
+void AdressPad::on_txtLDKZ_textChanged(const QString &arg1)
 {
-    ui->txtLDKZ->setText(ui->txtLDKZ->text().toUpper());
+    ui->txtLDKZ->setText(arg1.toUpper());
+}
+
+
+
+void AdressPad::on_txtOrt_editingFinished()
+{
+    updateDB();
+}
+
+void AdressPad::dirty()
+{
+    updateDB();
 }
