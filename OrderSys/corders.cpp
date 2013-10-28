@@ -78,7 +78,35 @@ void COrders::updateUI()
 
 void COrders::on_cmdNewAG_clicked()
 {
-    //TODO: AdressMap anlegen oder updaten mit Pos=1, adressID=neue Adress-ID, orderID=m_id
+    //Neuen Satz von adressPad erzeugen lassen und ID sichern.
+    int adrID = ui->padAG->insertNew();    
+    QSqlQuery* qryMap = new QSqlQuery();
+    qryMap->prepare("SELECT * FROM tblAdressMap WHERE orderID = ? AND pos = 1;");
+    qryMap->addBindValue(m_aufID);
+    qryMap->exec();
+
+    QString error;
+
+    //Gibt es schon einen Eintrag?
+    if(qryMap->isValid()) //Ja! Neue Adress-ID eintragen und editieren.
+    {
+        qryMap->prepare("UPDATE tblAdressMap SET adressID = ?;");
+        qryMap->addBindValue(adrID);
+        qryMap->exec();
+    }
+    else //ansonsten neuen Map-Eintrag erzeugen
+    {
+        qryMap = new QSqlQuery();
+        qryMap->prepare("INSERT INTO tblAdressMap (adressID, orderID, pos) VALUES (?, ?, ?);");
+        qryMap->addBindValue(adrID);
+        qryMap->addBindValue(m_aufID);
+        qryMap->addBindValue(1);
+        if(!qryMap->exec())
+        {
+            error = qryMap->lastError().text();
+        }
+    }
+    ui->padAG->beginEdit();
 }
 
 void COrders::on_cmdSrchAG_clicked()
@@ -88,7 +116,36 @@ void COrders::on_cmdSrchAG_clicked()
 
 void COrders::on_cmdNewRE_clicked()
 {
-    //TODO: AdressMap anlegen oder updaten mit Pos=2, adressID=neue Adress-ID, orderID=m_id
+    //AdressMap anlegen oder updaten mit Pos=2, adressID=neue Adress-ID, orderID=m_id
+    //Neuen Satz von adressPad erzeugen lassen und ID sichern.
+    int adrID = ui->padRE->insertNew();
+    QSqlQuery* qryMap = new QSqlQuery();
+    qryMap->prepare("SELECT * FROM tblAdressMap WHERE orderID = ? AND pos = 2;");
+    qryMap->addBindValue(m_aufID);
+    qryMap->exec();
+
+    QString error;
+
+    //Gibt es schon einen Eintrag?
+    if(qryMap->isValid()) //Ja! Neue Adress-ID eintragen und editieren.
+    {
+        qryMap->prepare("UPDATE tblAdressMap SET adressID = ?;");
+        qryMap->addBindValue(adrID);
+        qryMap->exec();
+    }
+    else //ansonsten neuen Map-Eintrag erzeugen
+    {
+        qryMap = new QSqlQuery();
+        qryMap->prepare("INSERT INTO tblAdressMap (adressID, orderID, pos) VALUES (?, ?, ?);");
+        qryMap->addBindValue(adrID);
+        qryMap->addBindValue(m_aufID);
+        qryMap->addBindValue(2);
+        if(!qryMap->exec())
+        {
+            error = qryMap->lastError().text();
+        }
+    }
+    ui->padAG->beginEdit();
 }
 
 void COrders::on_cmdSrchRE_clicked()
