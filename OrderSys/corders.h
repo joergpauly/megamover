@@ -24,6 +24,7 @@
 #include <QSqlQuery>
 #include <QDate>
 
+#include "cadresssearch.h"
 #include "adresspad.h"
 #include "cnkr.h"
 
@@ -55,6 +56,10 @@ private slots:
 
     void on_cmdSrchRE_clicked();
 
+    void on_cmdPrevAuf_clicked();
+
+    void on_cmdNextAuf_clicked();
+
 private:
     Ui::COrders *ui;
     QSqlQuery *m_qry;
@@ -65,6 +70,7 @@ private:
 //Private Members
 private:
     void updateUI();
+    void updateUIonOrder();
     void setupQuery();
 
 };
