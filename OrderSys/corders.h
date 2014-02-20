@@ -60,6 +60,8 @@ private slots:
 
     void on_cmdNextAuf_clicked();
 
+    void on_cmdDeleteAuf_clicked();
+
 private:
     Ui::COrders *ui;
     QSqlQuery *m_qry;

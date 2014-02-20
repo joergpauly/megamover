@@ -253,3 +253,8 @@ void COrders::updateUI()
         qry->next();
     }
 }
+
+void COrders::on_cmdDeleteAuf_clicked()
+{
+
+}
