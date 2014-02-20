@@ -39,6 +39,7 @@
 #include "corders.h"
 #include "cmdtwahl.h"
 #include "cclient.h"
+#include "cadresses.h"
 
 namespace Ui {
 class MainWindow;
@@ -56,6 +57,7 @@ class MainWindow : public QMainWindow
     COptions    *m_opts;
     COrders     *m_orders;
     CClient     *m_clients;
+    CAdresses   *m_adresses;
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -91,9 +93,12 @@ private slots:
 //Private Member
     void on_cmdClients_clicked();
 
+    void on_action_Zentrale_Adressen_Verwaltung_triggered();
+
 private:
     void openOrder();
     void openClients();
+    void openAdresses();
 
 
 private:

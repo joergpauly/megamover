@@ -209,6 +209,14 @@ void MainWindow::openClients()
     m_clients->show();
 }
 
+void MainWindow::openAdresses()
+{
+    m_adresses = new CAdresses(this);
+    QMdiSubWindow *wn = ui->mdiArea->addSubWindow(m_adresses);
+    m_adresses->setSubWindow(wn);
+    m_adresses->show();
+}
+
 void MainWindow::on_action_Kunden_triggered()
 {
     openClients();
@@ -217,4 +225,9 @@ void MainWindow::on_action_Kunden_triggered()
 void MainWindow::on_cmdClients_clicked()
 {
     openClients();
+}
+
+void MainWindow::on_action_Zentrale_Adressen_Verwaltung_triggered()
+{
+    openAdresses();
 }

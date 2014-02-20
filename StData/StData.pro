@@ -12,11 +12,13 @@ TEMPLATE = lib
 DEFINES += STDATA_LIBRARY
 
 SOURCES += \
-    cclient.cpp
+    cclient.cpp \
+    cadresses.cpp
 
 HEADERS +=\
         StData_global.h \
-    cclient.h
+    cclient.h \
+    cadresses.h
 
 unix:!symbian {
     maemo5 {
@@ -36,4 +38,5 @@ INCLUDEPATH += $$PWD/../DataPads \
 DEPENDPATH += $$PWD/../DataPads
 
 FORMS += \
-    cclient.ui
+    cclient.ui \
+    cadresses.ui

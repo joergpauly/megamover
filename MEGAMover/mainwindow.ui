@@ -80,7 +80,7 @@
      <x>0</x>
      <y>0</y>
      <width>748</width>
-     <height>20</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Auftragsdaten">
@@ -279,7 +279,7 @@
 bearbeiten</string>
             </property>
             <property name="icon">
-             <iconset resource="MEGAMover.qrc">
+             <iconset>
               <normaloff>:/icons/applications-office.png</normaloff>:/icons/applications-office.png</iconset>
             </property>
             <property name="iconSize">
@@ -308,7 +308,7 @@ bearbeiten</string>
              <string>Suchen</string>
             </property>
             <property name="icon">
-             <iconset resource="MEGAMover.qrc">
+             <iconset>
               <normaloff>:/icons/edit-find.png</normaloff>:/icons/edit-find.png</iconset>
             </property>
             <property name="iconSize">
@@ -337,7 +337,7 @@ bearbeiten</string>
              <string>Terminwesen</string>
             </property>
             <property name="icon">
-             <iconset resource="MEGAMover.qrc">
+             <iconset>
               <normaloff>:/icons/planner.png</normaloff>:/icons/planner.png</iconset>
             </property>
             <property name="iconSize">
@@ -380,7 +380,7 @@ bearbeiten</string>
 beenden</string>
             </property>
             <property name="icon">
-             <iconset resource="MEGAMover.qrc">
+             <iconset>
               <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
             </property>
             <property name="iconSize">
@@ -398,8 +398,8 @@ beenden</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>169</width>
-           <height>431</height>
+           <width>179</width>
+           <height>435</height>
           </rect>
          </property>
          <attribute name="label">
@@ -452,8 +452,8 @@ beenden</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>169</width>
-           <height>431</height>
+           <width>179</width>
+           <height>435</height>
           </rect>
          </property>
          <attribute name="label">
@@ -475,7 +475,7 @@ beenden</string>
              <string>Kundenstamm</string>
             </property>
             <property name="icon">
-             <iconset resource="MEGAMover.qrc">
+             <iconset>
               <normaloff>:/icons/resource-group.png</normaloff>:/icons/resource-group.png</iconset>
             </property>
             <property name="iconSize">
@@ -542,7 +542,7 @@ Geräte</string>
   </widget>
   <action name="actionNeu_Be_arbeiten">
    <property name="icon">
-    <iconset resource="MEGAMover.qrc">
+    <iconset>
      <normaloff>:/icons/applications-office.png</normaloff>:/icons/applications-office.png</iconset>
    </property>
    <property name="text">
@@ -551,7 +551,7 @@ Geräte</string>
   </action>
   <action name="action_Suchen">
    <property name="icon">
-    <iconset resource="MEGAMover.qrc">
+    <iconset>
      <normaloff>:/icons/edit-find.png</normaloff>:/icons/edit-find.png</iconset>
    </property>
    <property name="text">
@@ -560,7 +560,7 @@ Geräte</string>
   </action>
   <action name="action_Terminplanung">
    <property name="icon">
-    <iconset resource="MEGAMover.qrc">
+    <iconset>
      <normaloff>:/icons/planner.png</normaloff>:/icons/planner.png</iconset>
    </property>
    <property name="text">
@@ -579,7 +579,7 @@ Geräte</string>
   </action>
   <action name="actionProgramm_schli_e_en">
    <property name="icon">
-    <iconset resource="MEGAMover.qrc">
+    <iconset>
      <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
    </property>
    <property name="text">
@@ -653,7 +653,7 @@ Geräte</string>
   </action>
   <action name="action_Datenbank">
    <property name="icon">
-    <iconset resource="MEGAMover.qrc">
+    <iconset>
      <normaloff>:/icons/preferences-other.png</normaloff>:/icons/preferences-other.png</iconset>
    </property>
    <property name="text">
@@ -700,8 +700,6 @@ Geräte</string>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="MEGAMover.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
