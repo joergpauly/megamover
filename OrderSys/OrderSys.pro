@@ -35,6 +35,7 @@ FORMS += \
 INCLUDEPATH += \
     ../MEGAMover
 
+
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DataPads/release/ -lDataPads
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../DataPads/debug/ -lDataPads
 else:unix: LIBS += -L$$OUT_PWD/../DataPads/ -lDataPads
