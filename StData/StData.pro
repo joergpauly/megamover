@@ -16,7 +16,7 @@ SOURCES += \
 
 HEADERS +=\
         StData_global.h \
-    cclient.h
+    cclient.h \
 
 unix:!symbian {
     maemo5 {

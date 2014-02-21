@@ -122,42 +122,54 @@ void MainWindow::buildStatusBar()
     setStatusBar(bar);
 }
 
-
+/* Aufruf des Optionen-Dialoges */
 void MainWindow::on_action_Datenbank_triggered()
 {
+    /* Widgets mit frisch ausgelesenen Werten füllen */
     m_opts = new COptions(this);
     m_opts->setDBserver(core->getSettings()->getDBserver());
     m_opts->setDBname(core->getSettings()->getDBname());
     m_opts->setDBUser(core->getSettings()->getDBuser());
     m_opts->setDBPassword(core->getSettings()->getDBpassword());
+    // Dialog anzeigen
     if(m_opts->exec() == QDialog::Accepted)
     {        
+        /* Dialog wurde akzeptiert:
+         * Konfiguration aus dem Core holen */
         CSettings *lset = core->getSettings();
+        /* Eingabedaten des Dialogs in
+         * die Konfiguration schreiben. */
         lset->setDBserver(m_opts->getDBserver());
         lset->setDBname(m_opts->getDBname());
         lset->setDBuser(m_opts->getDBUser());
         lset->setDBpassword(m_opts->getDBPassword());
+        /* Der Core soll die Verbindung zur
+         * Datenbank mit den neuen Werten
+         * neu aufbauen. */
         core->reConnectDB();
     }
     delete m_opts;
 }
 
+// Mandantenstamm aufrufen
 void MainWindow::on_actionMan_danten_triggered()
 {
+    /* Dialog initialisieren */
     CMandant *mandant = new CMandant(this);
+    /* Das Mandant-Objekt braucht
+     * Zugriff auf den Core. */
     mandant->setCore(core);
     mandant->exec();
     delete mandant;
 }
 
-
-
-
+// Dialog "Über Qt..."
 void MainWindow::on_action_ber_Qt_triggered()
 {
     QApplication::aboutQt();
 }
 
+// Dialog "Über MEGAMover..."
 void MainWindow::on_action_ber_triggered()
 {
     CAbout *dlg = new CAbout(this);
@@ -165,16 +177,19 @@ void MainWindow::on_action_ber_triggered()
     delete dlg;
 }
 
+// Aufruf Auftragsbearbeitung
 void MainWindow::on_actionNeu_Be_arbeiten_triggered()
 {    
     openOrder();
 }
 
-
-
+// Aufruf Mandantenauswahl
 void MainWindow::on_action_aus_w_hlen_triggered()
 {
+    /* Dialog initialisieren */
     CMdtWahl *dlg = new CMdtWahl(this);
+    /* Die Daten des aktuellen Mandanten
+     * werden im Core hinterlegt. */
     dlg->setMandant(core->getMandant());
     if(dlg->exec() == QDialog::Accepted)
     {
@@ -184,16 +199,19 @@ void MainWindow::on_action_aus_w_hlen_triggered()
     delete dlg;
 }
 
+
 void MainWindow::on_cmdAuftrag_clicked()
 {
     openOrder();
 }
 
+/* Programmende über Button */
 void MainWindow::on_cmdClose_clicked()
 {
     this->close();
 }
 
+// Wrapper für Aufruf Auftragsbearbeitung
 void MainWindow::openOrder()
 {
     m_orders = new COrders(this);
@@ -201,6 +219,7 @@ void MainWindow::openOrder()
     m_orders->show();
 }
 
+// Wrapper für Aufruf Kundenstamm
 void MainWindow::openClients()
 {
     m_clients = new CClient(this);
@@ -209,24 +228,30 @@ void MainWindow::openClients()
     m_clients->show();
 }
 
+// Wrapper für Aufruf Adressenverwaltung
 void MainWindow::openAdresses()
 {
+    /*
     m_adresses = new CAdresses(this);
     QMdiSubWindow *wn = ui->mdiArea->addSubWindow(m_adresses);
     m_adresses->setSubWindow(wn);
     m_adresses->show();
+    */
 }
 
+// Aufruf Kundenstamm über Menü
 void MainWindow::on_action_Kunden_triggered()
 {
     openClients();
 }
 
+// Aufruf Kundenstamm über Button
 void MainWindow::on_cmdClients_clicked()
 {
     openClients();
 }
 
+// Aufruf Adressenverwaltung über Menü
 void MainWindow::on_action_Zentrale_Adressen_Verwaltung_triggered()
 {
     openAdresses();

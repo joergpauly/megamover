@@ -17,30 +17,37 @@
 
 CDatabaseManager::CDatabaseManager(QObject *parent) :
     QObject(parent)
-{    
+{
+    /* CMainWindow-Objekt sichern */
     m_parent = parent;
+    /* Verbindungs-Objekt erzeugen und initialisieren */
     dbcn = QSqlDatabase::addDatabase("QMYSQL");
     setupDB();
 }
 
 CDatabaseManager::~CDatabaseManager()
 {
+    // Wenn offen...
     if(dbcn.isOpen())
     {
+        // ...dann schließen!
         dbcn.close();
     }
 }
 
-
+// Datenbank neu verbinden
 void CDatabaseManager::reConnect()
 {
     dbcn.close();
     setupDB();
 }
 
-
+// Initialisieren und Öffnen der Datenbankverbindung
 void CDatabaseManager::setupDB()
 {
+    /* Verbindungs-Parameter aus
+     * Konfiguration holen und im
+     * Verbindungsobjekt setzen */
     CSettings *set = new CSettings();
     QString lsrv = set->getDBserver();
     QString ldbn = set->getDBname();
@@ -50,8 +57,10 @@ void CDatabaseManager::setupDB()
     dbcn.setDatabaseName(ldbn);
     dbcn.setUserName(lusr);
     dbcn.setPassword(lpwd);
+    /* Versuche, die Db zu öffnen */
     if(!dbcn.open())
     {
+        /* Öffnen fehlgeschlagen; Fehlermeldung! */
         QMessageBox *dlg = new QMessageBox();
         dlg->setWindowTitle("Datenbank-Fehler");
         dlg->setText("Datenbank kann nicht geöffnet werden!");
@@ -64,6 +73,7 @@ void CDatabaseManager::setupDB()
     }
     else
     {
+        /* Öffnen erfolgreich; Statusbar-Daten setzen */
         QString status = "Datenbank: ";
         status.append(ldbn);
         status.append(" auf ");

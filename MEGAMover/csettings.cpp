@@ -16,6 +16,7 @@
 CSettings::CSettings(QObject *parent) :
     QObject(parent)
 {
+    /* Member initialisieren */
     m_settings = new QSettings(VDR,APP);
     m_dbName = new QString();
     m_dbServer = new QString();
@@ -32,6 +33,7 @@ CSettings::~CSettings()
     delete m_settings;
 }
 
+// Einstellungen aus der Konfiguration holen
 void CSettings::readSettings()
 {
     *m_dbName = m_settings->value("dbName").toString();
@@ -40,6 +42,8 @@ void CSettings::readSettings()
     *m_dbPassword = m_settings->value("dbPassword").toString();
     m_mandant = m_settings->value("appMandant",0).toInt();
 }
+
+/* Get-Funktionen; lesen jeweils direkt aus Konfiguration */
 
 QString CSettings::getDBserver()
 {
@@ -70,6 +74,8 @@ int CSettings::getMandant()
     readSettings();
     return m_mandant;
 }
+
+/* Set-Funktionen; schreiben jeweils direkt in Konfiguration */
 
 void CSettings::setDBserver(QString *pServer)
 {
