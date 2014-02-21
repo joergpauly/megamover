@@ -39,7 +39,7 @@
 #include "corders.h"
 #include "cmdtwahl.h"
 #include "cclient.h"
-#include "cadresses.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -57,7 +57,7 @@ class MainWindow : public QMainWindow
     COptions    *m_opts;
     COrders     *m_orders;
     CClient     *m_clients;
-    CAdresses   *m_adresses;
+    //CAdresses   *m_adresses;
 
 public:
     explicit MainWindow(QWidget *parent = 0);

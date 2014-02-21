@@ -17,6 +17,7 @@ COptions::COptions(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::COptions)
 {
+    /* Member initialisieren */
     ui->setupUi(this);
     m_dbServer = new QString();
     m_dbName = new QString();
@@ -32,6 +33,8 @@ COptions::~COptions()
     delete m_dbUser;
     delete m_dbPassword;
 }
+
+/* Get-Funktionen */
 
 QString *COptions::getDBserver()
 {
@@ -52,6 +55,8 @@ QString *COptions::getDBPassword()
 {
     return m_dbPassword;
 }
+
+/* Set-Funktionen; setzen jeweils die Widget-Werte */
 
 void COptions::setDBserver(QString pDBserver)
 {
@@ -78,6 +83,7 @@ void COptions::setDBPassword(QString pDBpassword)
     ui->txtPassword->setText(*m_dbPassword);
 }
 
+/* "OK" geklickt; Widget-Werte in Member schreiben */
 void COptions::on_buttonBox_accepted()
 {
     *m_dbName = ui->txtDBname->text();

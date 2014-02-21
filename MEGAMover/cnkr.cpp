@@ -40,6 +40,8 @@ CNkr::CNkr(int pMnr, int pYear, int pMonth, int pNumber)
     m_number = pNumber;
 }
 
+// Get-Funktionen
+
 int CNkr::mandant()
 {
     return m_mandant;
@@ -60,9 +62,12 @@ int CNkr::number()
     return m_number;
 }
 
+/* Ausgabe der Auftragsnummer als String */
 QString CNkr::fullNumber()
 {
+    /* Ausgabestring... */
     QString lFullNr;
+    /* ...über Stream befüllen */
     QTextStream out(&lFullNr);
     out.setPadChar('0');
     out.setFieldAlignment(QTextStream::AlignRight);
@@ -86,8 +91,10 @@ QString CNkr::fullNumber()
     return lFullNr;
 }
 
+/* Neue Auftragsnummer generieren */
 int CNkr::newAnr()
 {
+    /* Nkr-Tabelle über Mandant, Jahr und Monat abfragen */
     m_month = QDate::currentDate().month();
     m_year = QDate::currentDate().year();
     QSqlQuery *qry = new QSqlQuery();
@@ -98,6 +105,10 @@ int CNkr::newAnr()
     qry->exec();
     if(qry->first())
     {
+        /* Es gibt im laufenden Monat
+         * bereits erzeugte Auftragsnummern.
+         * Es wird die nächste freie Nummer
+         * verwendet. */
         int id = qry->value(0).toInt();
         int anr = qry->value(1).toInt();
         qry->prepare("UPDATE tblNkr SET lfdnr = ? where ID = ?;");
@@ -108,6 +119,9 @@ int CNkr::newAnr()
     }
     else
     {
+        /* Es muss ein neuer Monat angelegt
+         * werden. Die Zählung beginnt
+         * wieder mit '1' */
         qry->prepare("INSERT INTO tblNkr (mnr, jahr, monat, lfdnr) VALUES (?, ?, ?, 2);");
         qry->addBindValue(m_mandant);
         qry->addBindValue(m_year);

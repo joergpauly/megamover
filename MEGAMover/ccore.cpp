@@ -16,6 +16,7 @@
 CCore::CCore(QObject *parent) :
     QObject(parent)
 {
+    /* Member initialisieren */
     m_db = new CDatabaseManager(this);
     m_settings = new CSettings(this);
     m_mandant = m_settings->getMandant();
@@ -28,6 +29,8 @@ CCore::~CCore()
     delete m_db;
     delete m_settings;
 }
+
+// Get-Funktionen
 
 CDatabaseManager *CCore::getDBManager()
 {
@@ -44,6 +47,8 @@ int CCore::getMandant()
     return m_mandant;
 }
 
+// Set-Funktionen; z.T. direkt in Konfiguration schreibend
+
 void CCore::setMandant(int mid)
 {
     m_mandant = mid;
@@ -51,6 +56,7 @@ void CCore::setMandant(int mid)
     ((MainWindow*)m_parent)->buildStatusBar();
 }
 
+/* Aufruf an CDatabaseManager, die Datenbank neu zu verbinden */
 void CCore::reConnectDB()
 {
     m_db->reConnect();
