@@ -230,13 +230,11 @@ void MainWindow::openClients()
 
 // Wrapper für Aufruf Adressenverwaltung
 void MainWindow::openAdresses()
-{
-    /*
+{    
     m_adresses = new CAdresses(this);
     QMdiSubWindow *wn = ui->mdiArea->addSubWindow(m_adresses);
-    m_adresses->setSubWindow(wn);
-    m_adresses->show();
-    */
+    m_adresses->setSubWnd(wn);
+    m_adresses->show();    
 }
 
 // Aufruf Kundenstamm über Menü
