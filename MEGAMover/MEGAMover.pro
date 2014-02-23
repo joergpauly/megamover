@@ -78,9 +78,6 @@ OTHER_FILES += \
     background.png \
     applications-office.png
 
-
-
-
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DataPads/release/ -lDataPads
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../DataPads/debug/ -lDataPads
 else:unix: LIBS += -L$$OUT_PWD/../DataPads/ -lDataPads
@@ -94,6 +91,7 @@ else:unix: LIBS += -L$$OUT_PWD/../StData/ -lStData
 
 INCLUDEPATH += $$PWD/../StData
 DEPENDPATH += $$PWD/../StData
+
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../OrderSys/release/ -lOrderSys
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../OrderSys/debug/ -lOrderSys

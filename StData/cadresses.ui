@@ -18,9 +18,12 @@
     <widget class="AdressPad" name="widget" native="true"/>
    </item>
    <item>
+    <widget class="CQueryNavigator" name="widget_2" native="true"/>
+   </item>
+   <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Close</set>
      </property>
     </widget>
    </item>
@@ -31,6 +34,12 @@
    <class>AdressPad</class>
    <extends>QWidget</extends>
    <header>adresspad.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CQueryNavigator</class>
+   <extends>QWidget</extends>
+   <header>cquerynavigator.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

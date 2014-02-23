@@ -17,14 +17,16 @@ SOURCES += \
     adresspad.cpp \
     cclientaccountpad.cpp \
     cadresssearch.cpp \
-    cclientsearch.cpp
+    cclientsearch.cpp \
+    cquerynavigator.cpp
 
 HEADERS +=\
         DataPads_global.h \
     adresspad.h \
     cclientaccountpad.h \
     cadresssearch.h \
-    cclientsearch.h
+    cclientsearch.h \
+    cquerynavigator.h
 
 unix:!symbian {
     maemo5 {
@@ -39,6 +41,7 @@ FORMS += \
     adresspad.ui \
     cclientaccountpad.ui \
     cadresssearch.ui \
-    cclientsearch.ui
+    cclientsearch.ui \
+    cquerynavigator.ui
 
 INCLUDEPATH += $$PWD/../MEGAMover
