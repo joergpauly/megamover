@@ -30,14 +30,13 @@ unix:!symbian {
     INSTALLS += target
 }
 
+FORMS += \
+    cclient.ui \
+    cadresses.ui
+
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DataPads/release/ -lDataPads
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../DataPads/debug/ -lDataPads
 else:unix: LIBS += -L$$OUT_PWD/../DataPads/ -lDataPads
 
-INCLUDEPATH += $$PWD/../DataPads \
-    $$PWD/../MEGAMover
+INCLUDEPATH += $$PWD/../DataPads
 DEPENDPATH += $$PWD/../DataPads
-
-FORMS += \
-    cclient.ui \
-    cadresses.ui

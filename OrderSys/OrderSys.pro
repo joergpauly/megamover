@@ -36,12 +36,6 @@ INCLUDEPATH += \
     ../MEGAMover
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DataPads/release/ -lDataPads
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../DataPads/debug/ -lDataPads
-else:unix: LIBS += -L$$OUT_PWD/../DataPads/ -lDataPads
-
-INCLUDEPATH += $$PWD/../DataPads
-DEPENDPATH += $$PWD/../DataPads
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../StData/release/ -lStData
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../StData/debug/ -lStData
@@ -49,3 +43,10 @@ else:unix: LIBS += -L$$OUT_PWD/../StData/ -lStData
 
 INCLUDEPATH += $$PWD/../StData
 DEPENDPATH += $$PWD/../StData
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../DataPads/release/ -lDataPads
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../DataPads/debug/ -lDataPads
+else:unix: LIBS += -L$$OUT_PWD/../DataPads/ -lDataPads
+
+INCLUDEPATH += $$PWD/../DataPads
+DEPENDPATH += $$PWD/../DataPads
