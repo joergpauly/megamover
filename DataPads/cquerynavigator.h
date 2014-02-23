@@ -17,6 +17,13 @@ public:
     void setQuery(QSqlQuery* pQry);
     ~CQueryNavigator();
 
+public slots:
+    void previous();
+    void next();
+    void search();
+    void delet();
+    void save();
+
 private:
     Ui::CQueryNavigator *ui;
     QSqlQuery* m_qry;
