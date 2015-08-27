@@ -13,7 +13,7 @@
 #ifndef CORDERS_H
 #define CORDERS_H
 
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QWidget>
 #else

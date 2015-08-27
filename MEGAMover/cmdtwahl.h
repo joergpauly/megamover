@@ -13,7 +13,7 @@
 #ifndef CMDTWAHL_H
 #define CMDTWAHL_H
 
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QDialog>
 #else

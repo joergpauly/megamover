@@ -13,7 +13,7 @@
 #ifndef COPTIONS_H
 #define COPTIONS_H
 
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QDialog>
 #else

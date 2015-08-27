@@ -14,7 +14,7 @@
 #define CCLIENTSEARCH_H
 
 //System-Header
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QDialog>
 #else

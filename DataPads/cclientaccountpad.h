@@ -13,7 +13,7 @@
 #ifndef CCLIENTACCOUNTPAD_H
 #define CCLIENTACCOUNTPAD_H
 
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QWidget>
 #else

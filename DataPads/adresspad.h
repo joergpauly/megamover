@@ -13,7 +13,7 @@
 #ifndef ADRESSPAD_H
 #define ADRESSPAD_H
 
-#include "qtversion.h"
+#include "../MEGAMover/qtversion.h"
 #ifdef QT5
 #include <QtWidgets/QWidget>
 #else

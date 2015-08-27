@@ -17,3 +17,28 @@ CQueryNavigator::~CQueryNavigator()
 {
     delete ui;
 }
+
+void CQueryNavigator::previous()
+{
+    m_qry->previous();
+}
+
+void CQueryNavigator::next()
+{
+    m_qry->next();
+}
+
+void CQueryNavigator::search()
+{
+
+}
+
+void CQueryNavigator::delet()
+{
+
+}
+
+void CQueryNavigator::save()
+{
+
+}
