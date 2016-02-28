@@ -39,6 +39,7 @@
 #include "corders.h"
 #include "cmdtwahl.h"
 #include "stdata.h"
+#include "clogon.h"
 
 
 namespace Ui {
@@ -51,6 +52,8 @@ class MainWindow : public QMainWindow
     
 // Private Properties
     CCore *core;
+    CLogon *m_logon;
+    QString m_Username;
 
 //Child-Windows
     Ui::MainWindow *ui;
@@ -71,37 +74,26 @@ public:
 
 private slots:
     void on_actionProgramm_schli_e_en_triggered();
-
     void on_action_Datenbank_triggered();
-
     void on_actionMan_danten_triggered();
-
     void on_action_ber_Qt_triggered();
-
     void on_action_ber_triggered();
-
     void on_actionNeu_Be_arbeiten_triggered();
-
     void on_action_Kunden_triggered();
-
     void on_action_aus_w_hlen_triggered();
-
     void on_cmdAuftrag_clicked();
-
     void on_cmdClose_clicked();
-
-//Private Member
     void on_cmdClients_clicked();
-
     void on_action_Zentrale_Adressen_Verwaltung_triggered();
 
+    //Private Member
 private:
     void openOrder();
     void openClients();
     void openAdresses();
+    void fetchUser();
 
 
-private:
 
 };
 

@@ -16,6 +16,7 @@
 #include <QObject>
 #include <QSqlDatabase>
 #include <QSqlDriver>
+#include <QtSql/QMYSQLDriver>
 #include <QSqlQuery>
 #include <QSqlRecord>
 #include <QSqlError>

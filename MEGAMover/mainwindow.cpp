@@ -24,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dockWidget->setFixedWidth(200);
     ui->toolBox->setCurrentIndex(0);
     core = new CCore(this);
+    m_logon = new CLogon();
+    fetchUser();
     QString lTitle;
     lTitle = APP;
     lTitle.append(" ");
@@ -111,6 +113,9 @@ void MainWindow::buildStatusBar()
 
     QLabel *mlbl = setMandantStatus();
     bar->addPermanentWidget(mlbl);
+    QLabel *ulbl = new QLabel();
+    ulbl->setText("Anwender: " + m_Username);
+    bar->addPermanentWidget(ulbl);
 
     /*QString status = "Datenbank: ";
     status.append(core->getSettings()->getDBname());
@@ -234,7 +239,31 @@ void MainWindow::openAdresses()
     m_adresses = new CAdresses(this);
     QMdiSubWindow *wn = ui->mdiArea->addSubWindow(m_adresses);
     m_adresses->setSubWnd(wn);
-    m_adresses->show();    
+    m_adresses->show();
+}
+
+// Aktiven Anwender bestimmen
+void MainWindow::fetchUser()
+{
+    QSqlQuery lqry;
+    lqry.prepare("SELECT * FROM tblCoworkers WHERE ID = :ID;");
+    lqry.bindValue(":ID", m_logon->UserID());
+    lqry.exec();
+    lqry.first();
+
+    if(lqry.isValid())
+    {
+        int lID = lqry.value(lqry.record().indexOf("adressID")).toInt();
+        lqry.prepare("SELECT * FROM tblAdresses WHERE ID = :ID;");
+        lqry.bindValue(":ID", lID);
+        lqry.exec();
+        lqry.first();
+
+        if(lqry.isValid())
+        {
+            m_Username = lqry.value(lqry.record().indexOf("name1")).toString() + ", " + lqry.value(lqry.record().indexOf("vorname")).toString();
+        }
+    }\
 }
 
 // Aufruf Kundenstamm über Menü

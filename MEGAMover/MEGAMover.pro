@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core widgets gui sql
+QT       += core widgets gui sql network
 
 
 TARGET = MEGAMover
@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     cmandant.cpp \
     cabout.cpp \
     cmdtwahl.cpp \
-    cnkr.cpp
+    cnkr.cpp \
+    clogon.cpp
 
 HEADERS  += mainwindow.h \
     ccore.h \
@@ -36,7 +37,8 @@ HEADERS  += mainwindow.h \
     cabout.h \
     qtversion.h \
     cmdtwahl.h \
-    cnkr.h
+    cnkr.h \
+    clogon.h
 
 FORMS    += mainwindow.ui \
     coptions.ui \
