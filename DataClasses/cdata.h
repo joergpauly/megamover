@@ -50,7 +50,7 @@ public:
     CData();
 
     // Public Member
-    void isValid();
+    bool isValid();
     int ID() const;
     QSqlQuery query() const;
     void setQuery(const QSqlQuery &query);

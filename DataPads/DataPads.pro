@@ -44,4 +44,5 @@ FORMS += \
     cclientsearch.ui \
     cquerynavigator.ui
 
-INCLUDEPATH += $$PWD/../MEGAMover
+INCLUDEPATH += $$PWD/../MEGAMover $$PWD/../DataClasses
+DEPENDPATH += $$PWD/../DataClasses

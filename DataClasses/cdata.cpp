@@ -53,7 +53,7 @@ CData::CData()
 
 }
 
-void CData::isValid()
+bool CData::isValid()
 {
     return m_query.isValid();
 }

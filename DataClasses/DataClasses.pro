@@ -11,6 +11,8 @@ QT       -= gui
 TARGET = DataClasses
 TEMPLATE = lib
 
+VERSION = 3.0.1001
+
 DEFINES += DATACLASSES_LIBRARY
 
 SOURCES += ccoworker.cpp \

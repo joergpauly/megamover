@@ -37,7 +37,8 @@ class DATACLASSESSHARED_EXPORT CCoworker : public CData
 {
 
 private:
-    CAdress     m_Adress;
+    CAdress*    m_Adress;
+
 
 
 public:
