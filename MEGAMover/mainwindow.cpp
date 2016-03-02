@@ -263,6 +263,11 @@ void MainWindow::fetchUser()
         {
             m_Username = lqry.value(lqry.record().indexOf("name1")).toString() + ", " + lqry.value(lqry.record().indexOf("vorname")).toString();
         }
+        else
+        {
+            //TODO: Abfragen, wer da ist, neuen Logon-Satz schreiben.
+
+        }
     }\
 }
 

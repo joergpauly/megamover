@@ -6,7 +6,8 @@ SUBDIRS += \
     DataPads \
     StData \
     OrderSys \
-    MEGAMover
+    MEGAMover \
+    DataClasses
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/StData/release/ -lStData
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/StData/debug/ -lStData
