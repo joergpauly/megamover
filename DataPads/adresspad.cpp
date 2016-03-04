@@ -170,7 +170,6 @@ void AdressPad::clearUI()
     ui->txtEmail->setText("");
 }
 
-
 int AdressPad::insertNew()
 {
     m_query->prepare("INSERT INTO tblAdresses (anrede, title, vorname, name1, name2, strasse, strnummer, ldkz, plz, ort, tel, mobil, fax, email)"
@@ -218,14 +217,10 @@ void AdressPad::setFieldsEditable(bool pEnable)
     ui->txtEmail->setEnabled(pEnable);
 }
 
-
-
 void AdressPad::on_txtLDKZ_textChanged(const QString &arg1)
 {
     ui->txtLDKZ->setText(arg1.toUpper());
 }
-
-
 
 void AdressPad::on_txtOrt_editingFinished()
 {

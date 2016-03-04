@@ -18,6 +18,7 @@ CAdressSearch::CAdressSearch(QWidget *parent) :
     ui(new Ui::CAdressSearch)
 {
     QSqlQuery lq;
+    // Unauffindbare Adressen löschen
     lq.exec("DELETE from tblAdresses WHERE name1 = '' AND name2 = '' AND ort = '';");
     ui->setupUi(this);
     model = new QSqlQueryModel();
@@ -54,7 +55,7 @@ int CAdressSearch::getAdrID()
 
 void CAdressSearch::on_tblAdresses_doubleClicked(const QModelIndex &index)
 {
-    m_adrID = model->record(index.row()).value(0).toInt();
+    m_adrID = model->record(index.row()).value(model->record().indexOf("ID")).toInt();
     this->accept();
 }
 

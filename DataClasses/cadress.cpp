@@ -28,6 +28,8 @@
 #include "cadress.h"
 
 // De- und Konstruktoren
+
+
 CAdress::CAdress()
 {
 
@@ -35,8 +37,37 @@ CAdress::CAdress()
 
 CAdress::CAdress(int pID)
 {
-
+    getByID(pID);
 }
+
+void CAdress::getByID(int pID)
+{
+    // Query vorbereiten und ausführen
+    m_query.prepare("SELECT * FROM tblAdresses WHERE ID = :ID;");
+    m_query.bindValue(":ID", pID);
+    m_query.exec();
+    m_query.first();
+
+    if(m_query.isValid())
+    {
+        m_ID = m_query.value(m_query.record().indexOf("ID")).toInt();
+        m_Anrede = m_query.value(m_query.record().indexOf("anrede")).toString();
+        m_Titel = m_query.value(m_query.record().indexOf("title")).toString();
+        m_VName = m_query.value(m_query.record().indexOf("vorname")).toString();
+        m_Name1 = m_query.value(m_query.record().indexOf("name1")).toString();
+        m_Name2 = m_query.value(m_query.record().indexOf("name2")).toString();
+        m_Strasse = m_query.value(m_query.record().indexOf("strasse")).toString();
+        m_StrNummer = m_query.value(m_query.record().indexOf("strnummer")).toString();
+        m_Ldkz = m_query.value(m_query.record().indexOf("ldkz")).toString();
+        m_PLZ = m_query.value(m_query.record().indexOf("plz")).toString();
+        m_Ort = m_query.value(m_query.record().indexOf("ort")).toString();
+        m_Tel = m_query.value(m_query.record().indexOf("tel")).toString();
+        m_Fax = m_query.value(m_query.record().indexOf("fax")).toString();
+        m_Email = m_query.value(m_query.record().indexOf("email")).toString();
+    }
+}
+
+
 
 CAdress::~CAdress()
 {
@@ -83,6 +114,15 @@ QString CAdress::Name1() const
 void CAdress::setName1(const QString &Name1)
 {
     m_Name1 = Name1;
+}
+QString CAdress::Name2() const
+{
+    return m_Name2;
+}
+
+void CAdress::setName2(const QString &Name2)
+{
+    m_Name2 = Name2;
 }
 
 QString CAdress::Strasse() const

@@ -41,7 +41,7 @@
 
 class DATACLASSESSHARED_EXPORT CData
 {
-private:
+protected:
     int                 m_ID;
     QSqlQuery           m_query;
 

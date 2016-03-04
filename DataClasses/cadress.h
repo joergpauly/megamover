@@ -28,6 +28,7 @@
 #ifndef CADRESS_H
 #define CADRESS_H
 
+
 // Projekt-Header
 #include "dataclasses_global.h"
 #include "cdata.h"
@@ -39,6 +40,7 @@ private:
     QString         m_Titel;
     QString         m_VName;
     QString         m_Name1;
+    QString         m_Name2;
     QString         m_Strasse;
     QString         m_StrNummer;
     QString         m_Ldkz;
@@ -48,6 +50,8 @@ private:
     QString         m_MobTel;
     QString         m_Fax;
     QString         m_Email;
+
+    void getByID(int pID);
 
 public:
     // De- und Konstruktoren
@@ -85,6 +89,8 @@ public:
 
     // Public Member
 
+    QString Name2() const;
+    void setName2(const QString &Name2);
 };
 
 #endif // CADRESS_H
