@@ -29,3 +29,10 @@ else:unix: LIBS += -L$$OUT_PWD/DataPads/ -lDataPads
 
 INCLUDEPATH += $$PWD/DataPads
 DEPENDPATH += $$PWD/DataPads
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/DataClasses/release/ -lDataClasses
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/DataClasses/debug/ -lDataClasses
+else:unix: LIBS += -L$$OUT_PWD/DataClasses/ -lDataClasses
+
+INCLUDEPATH += $$PWD/DataClasses
+DEPENDPATH += $$PWD/DataClasses

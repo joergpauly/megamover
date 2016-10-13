@@ -53,6 +53,22 @@ CData::CData()
 
 }
 
+CData::CData(int pID)
+{
+    m_ID = pID;
+}
+
+CData::CData(int pID, QSqlQuery *pQuery)
+{
+    m_ID = pID;
+    m_query = *pQuery;
+}
+
+CData::CData(int pID, QString pSql)
+{
+    m_ID = pID;
+}
+
 bool CData::isValid()
 {
     return m_query.isValid();

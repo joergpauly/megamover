@@ -28,7 +28,7 @@
 #define MAJ "3"
 #define MIN "0"
 #define REL "1001"
-#define CPR "2013 (C) J. Pauly"
+#define CPR "2013 - 2016 (C) J. Pauly"
 #define VDR "MEGAMover.de"
 
 class CCore : public QObject

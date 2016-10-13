@@ -48,7 +48,9 @@ protected:
 public:
     // De- und Konstruktoren
     CData();
-
+    CData(int pID);
+    CData(int pID, QSqlQuery* pQuery);
+    CData(int pID, QString pSql);
     // Public Member
     bool isValid();
     int ID() const;
